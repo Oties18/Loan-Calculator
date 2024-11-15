@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Loan Calculator</title>
+
     <style>
         .output{font-weight: bold;}
         #payment{text-decoration: underline;}
@@ -11,11 +12,79 @@
         /* table head, table data */
         th,td{vertical-align: top;}
     </style>
+
 </head>
+
 <body>
-    <script>
-        -3D effect
-        -3D Rotation
-    </script>
+
+    <h1>LOAN CALCULATOR</h1>
+
+    <table>
+
+        <tr><th>
+            Enter Loan Data
+        </th>
+
+        <td></td>
+
+        <th>Loan Balance, cummulative Equity, and Interest</th>
+
+    </tr>
+
+    <tr>
+        <td>Amount of Loan (N): </td>
+        <td><input id="amount" onchange="calculate()" type="text"></td>
+        <td rowspan="8">
+            <canvas id="graph" width="400" height="250"></canvas>
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>Annual Interest (%):</td>
+        <td><input id="apr" onchange="calculate()"></td>
+    </tr>
+
+    <tr>
+        <td>Repayment Period (years):</td>
+        <td><input id="years" onchange="calculate()"></td>
+    </tr>
+
+    <tr>
+        <td>ZipCode (to find lenders)</td>
+        <td> <input id="zipcode" onchange="calculate()"></td>
+    </tr>
+
+    <tr>
+        <th>Appropiate payments:</th>
+        <td> <button onclick="calculate()">Calculate</button></td>
+    </tr>
+
+    <tr>
+        <td>Monthly Payment:</td>
+        <td>N<span class="output" id="Payment"></span></td>
+    </tr>
+
+    <tr>
+        <td>Total Payment:</td>
+        <td>N<span class="output" id="payment"></span></td>
+    </tr>
+
+    <tr>
+        
+     <td>Total Interest:</td>
+     <td>N <span class="output" id="totalInterest"></span></td>
+    </tr>
+
+    <tr>
+        <th>Sponsors: </th>
+        <td colspan="2">Apply for your loan with one of these lenders</td>
+        <div id="lenders"></div>
+    </tr>
+
+    </table>
+
+
+   
 </body>
 </html>
